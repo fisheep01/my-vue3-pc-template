@@ -34,13 +34,6 @@ module.exports = defineConfig({
       },
     },
     {
-      files: ['**/__tests__/**'],
-      rules: {
-        'no-console': 'off',
-        'vue/one-component-per-file': 'off',
-      },
-    },
-    {
       files: ['package.json'],
       parser: 'jsonc-eslint-parser',
       rules: {
@@ -121,15 +114,6 @@ module.exports = defineConfig({
       },
       rules: {
         'no-undef': 'off',
-      },
-    },
-
-    {
-      files: ['**/*.md/*.js', '**/*.md/*.ts'],
-      rules: {
-        'no-console': 'off',
-        'import/no-unresolved': 'off',
-        '@typescript-eslint/no-unused-vars': 'off',
       },
     },
   ],
