@@ -21,13 +21,9 @@ const _bem = (
   return cls
 }
 
-export const useNamespace = (
-  block: string,
-  namespaceOverrides?: string
-) => {
+export const useNamespace = (block: string, namespaceOverrides?: string) => {
   const namespace = namespaceOverrides ?? defaultNamespace
-  const b = (blockSuffix = '') =>
-    _bem(namespace, block, blockSuffix, '', '')
+  const b = (blockSuffix = '') => _bem(namespace, block, blockSuffix, '', '')
   const e = (element?: string) =>
     element ? _bem(namespace, block, '', element, '') : ''
   const m = (modifier?: string) =>
@@ -37,9 +33,7 @@ export const useNamespace = (
       ? _bem(namespace, block, blockSuffix, element, '')
       : ''
   const em = (element?: string, modifier?: string) =>
-    element && modifier
-      ? _bem(namespace, block, '', element, modifier)
-      : ''
+    element && modifier ? _bem(namespace, block, '', element, modifier) : ''
   const bm = (blockSuffix?: string, modifier?: string) =>
     blockSuffix && modifier
       ? _bem(namespace, block, blockSuffix, '', modifier)
@@ -79,8 +73,7 @@ export const useNamespace = (
   }
 
   const cssVarName = (name: string) => `--${namespace}-${name}`
-  const cssVarBlockName = (name: string) =>
-    `--${namespace}-${block}-${name}`
+  const cssVarBlockName = (name: string) => `--${namespace}-${block}-${name}`
 
   return {
     namespace,
