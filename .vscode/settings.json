@@ -1,10 +1,12 @@
 {
+  "vetur.validation.template": false,
+  "vetur.validation.script": false,
+  "vetur.validation.style": false,
+  "vetur.validation.templateProps": false,
   "editor.formatOnSave": true,
   "eslint.probe": [
     "javascript",
-    "javascriptreact",
     "typescript",
-    "typescriptreact",
     "html",
     "vue",
     "markdown",
@@ -13,13 +15,11 @@
   ],
   "eslint.validate": [
     "javascript",
-    "javascriptreact",
     "typescript",
-    "typescriptreact",
     "html",
     "vue",
     "markdown",
     "json",
     "jsonc"
-  ],
+  ]
 }
