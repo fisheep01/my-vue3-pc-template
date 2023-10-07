@@ -3532,6 +3532,11 @@ sass@*, sass@^1.68.0:
     immutable "^4.0.0"
     source-map-js ">=0.6.2 <2.0.0"
 
+scss-reset@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/scss-reset/-/scss-reset-1.4.2.tgz#0020fd9793286404a6cd9e97814102ad0942f049"
+  integrity sha512-eXtSeI5APjD/TtaIlRdiMRapgsX5GCP4I1Ti3FiUzCSE4GEYnfT1hGISrJkKGZsZbCDhwZv1bUdOOZfPGs3R1A==
+
 "semver@2 || 3 || 4 || 5", semver@^5.5.0:
   version "5.7.2"
   resolved "https://registry.npmjs.org/semver/-/semver-5.7.2.tgz"
