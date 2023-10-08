@@ -1,7 +1,5 @@
 <template>
   <div :class="ns.b()">
-    <h1>{{ msg }}</h1>
-
     <div :class="ns.e('card')">
       <button type="button" @click="count++">count is {{ count }}</button>
       <p>
@@ -16,8 +14,6 @@
 import { ref } from 'vue'
 import { useNamespace } from '@/hooks'
 
-defineProps<{ msg: string }>()
-
 const ns = useNamespace('hello')
 
 const count = ref(0)
@@ -27,12 +23,10 @@ const count = ref(0)
 @use '@/assets/scss/mixins/bem.scss' as *;
 
 @include b(hello) {
+  margin-top: 40px;
   @include e(card) {
+    padding: 20px;
     background-color: #1263f8;
   }
-}
-
-.read-the-docs {
-  color: #888;
 }
 </style>

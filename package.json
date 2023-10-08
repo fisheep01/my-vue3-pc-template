@@ -2,12 +2,12 @@
   "name": "my-vue3-pc-template",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "clean": "rimraf node_modules"
+    "clean": "rimraf node_modules",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@vueuse/core": "^10.4.1",

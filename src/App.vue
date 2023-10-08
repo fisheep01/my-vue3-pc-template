@@ -11,7 +11,7 @@
       />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld />
 </template>
 
 <script lang="ts" setup>
