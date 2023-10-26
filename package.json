@@ -2,6 +2,7 @@
   "name": "my-vue3-pc-template",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "yarn@4.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",

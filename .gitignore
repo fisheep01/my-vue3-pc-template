@@ -14,9 +14,13 @@ dist-ssr
 
 # Editor directories and files
 .idea
+.yarn
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# lock
+yarn.lock
