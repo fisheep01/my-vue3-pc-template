@@ -1,6 +1,6 @@
 {
   "name": "my-vue3-pc-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "packageManager": "yarn@4.0.0",
   "scripts": {
