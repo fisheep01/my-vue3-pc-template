@@ -18,8 +18,6 @@
 import HelloWorld from './components/HelloWorld.vue'
 import { useNamespace } from '@/hooks'
 
-defineProps<{ msg: string }>()
-
 const ns = useNamespace('main')
 </script>
 
