@@ -3,6 +3,9 @@
   "vetur.validation.script": false,
   "vetur.validation.style": false,
   "vetur.validation.templateProps": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
   "editor.formatOnSave": true,
   "eslint.probe": [
     "javascript",
