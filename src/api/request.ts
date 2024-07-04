@@ -1,12 +1,5 @@
 import axios from 'axios'
-import type {
-  AxiosError,
-  AxiosInstance,
-  AxiosRequestConfig,
-  Canceler,
-} from 'axios'
-
-const CancelToken = axios.CancelToken
+import type { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios'
 
 export interface IRequsetConfig {
   baseUrl: string
@@ -16,12 +9,12 @@ export interface IRequsetConfig {
 export class HttpRequest {
   private baseUrl: string
   private token: string
-  private pending: Record<string, Canceler>
+  private pending: Map<string, AbortController>
 
   constructor(requsetConfig: IRequsetConfig) {
     this.baseUrl = requsetConfig.baseUrl
     this.token = requsetConfig.token
-    this.pending = {}
+    this.pending = new Map()
   }
 
   // 获取axios配置
@@ -37,10 +30,10 @@ export class HttpRequest {
   }
 
   removePending(key: string, isRequest = false) {
-    if (this.pending[key] && isRequest) {
-      this.pending[key]('取消重复请求')
+    if (this.pending.has(key) && isRequest) {
+      this.pending.get(key)!.abort()
     }
-    delete this.pending[key]
+    this.pending.delete(key)
   }
 
   // 设定拦截器
@@ -52,9 +45,9 @@ export class HttpRequest {
 
         const key = `${config.url}&${config.method}`
         this.removePending(key, true)
-        config.cancelToken = new CancelToken((c) => {
-          this.pending[key] = c
-        })
+        const controller = new AbortController()
+        config.signal = controller.signal
+        this.pending.set(key, controller)
         return config
       },
       (err) => Promise.reject(err)
